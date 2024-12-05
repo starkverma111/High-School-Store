@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>High School Store</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- Google Font -->
+    <link href="https://fonts.cdnfonts.com/css/google-sans" rel="stylesheet">
+    <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <!-- Font Awesome CDN | Copy this code and add to head section-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <style>
+      body,
+      html {
+        font-family: 'Product Sans Light', sans-serif !important;
+        height: 100%;
+        margin: 0;
+        background-color: whitesmoke;
+      }
+
+      #itemImg {
+	   max-height:400px;
+	   max-width:400px;
+      }
+        .image-container img {
+        aspect-ratio: 1/1;
+            position: absolute;
+            top: 0;
+            left: 0;
+        	max-height:140px;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            
+        } 
+        
+		.partner-logo {
+			width: 100%;         /* Ensures the image takes up full width of its container */
+			max-width: 160px;    /* Sets a max width to ensure uniformity */
+			height: 100px;       /* Fixed height for all images */
+			object-fit: contain; /* Keeps the image aspect ratio and fits it within the defined box */
+		}
+    </style>
+  </head>
+  <body>
+    <div class="container-fluid p-0 m-0">
+
+	<!--**** nav bar & header Section ****-->
+		
+	 
+		<section>
+			<div class="container mx-auto my-5 bg-light rounded-2">
+				<div class="row p-4">
+					<div class="col-md-12 col-lg-6 align-self-center mx-auto mb-5">
+						<div class="zoom-container">
+							<img src="https://computechstore.in/wp-content/uploads/2024/01/71dJSfFRx9L._SL1500-1.jpg" class="rounded mx-auto d-block img-fluid zoom-image" id="itemImg" style="object-fit: cover;" />
+						</div>
+					</div>
+					<div class="col-md-12 col-lg-6 mx-auto align-self-center rounded-2 p-5 bg-white shadow-sm">
+						<h2 class="display-5">HP Laptop with Skins</h2>
+						<div class="mb-4 mt-4 text-center">
+							<h5>Deal Price:</h5>
+							<p class="fs-3 fw-bold">$999</p>
+						</div>
+						<h6 class="fw-bold"/>Short Description</h6>
+						<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+						<div class="mb-4 mt-4">
+						<h6 class="fw-bold">Choose Colour</h6>
+							<div class="form-check form-check-inline mt-2">
+								<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" checked>
+								<label class="form-check-label" for="inlineRadio1">Blue</label>
+							</div>
+							<div class="form-check form-check-inline">
+								<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+								<label class="form-check-label" for="inlineRadio2">Green</label>
+							</div>
+							
+							 <div class="form-check form-check-inline">
+								<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+								<label class="form-check-label" for="inlineRadio2">Red</label>
+							</div>
+						</div>
+
+						<!-- Quantity Control -->
+		<h6 class="fw-bold">Select No of Items</h6>
+		<div class="d-flex align-items-center mb-4 pt-2">
+			<button class="btn btn-outline-secondary" id="decreaseQuantity" style="width: 40px; height: 40px;"><svg xmlns="http://www.w3.org/2000/svg" 
+			width="16" height="16" fill="currentColor" class="bi bi-dash-lg text-dark" viewBox="0 0 16 16">
+		  <path fill-rule="evenodd" d="M2 8a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11A.5.5 0 0 1 2 8"/>
+		</svg></button>
+			<input type="number" id="quantity" class="form-control  text-center mx-2 bg-white" value="1" min="1" style="width: 90px;" readonly disabled />
+			<button class="btn btn-outline-secondary d-flex justify-content-center align-items-center" id="increaseQuantity" style="width: 40px; height: 40px;">
+				<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-plus-lg text-dark" viewBox="0 0 16 16">
+					<path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2"/>
+				</svg>
+			</button>
+		</div>
+
+
+						<div class="py-4 d-flex flex-column flex-sm-row">
+							<button class="btn btn-dark shadow-sm btn-lg rounded-pill me-2 mb-2 mb-sm-0 w-100" type="button">
+								<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-cart3 me-2" viewBox="0 0 16 16">
+									<path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l.84 4.479 9.144-.459L13.89 4zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/>
+								</svg>Add to Cart
+							</button>
+							<button class="btn border btn-lg fw-bold rounded-pill w-100" type="button"> 
+							<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-lightning-fill me-2" viewBox="0 0 16 16">
+		  <path d="M5.52.359A.5.5 0 0 1 6 0h4a.5.5 0 0 1 .474.658L8.694 6H12.5a.5.5 0 0 1 .395.807l-7 9a.5.5 0 0 1-.873-.454L6.823 9.5H3.5a.5.5 0 0 1-.48-.641z"/>
+		</svg>Buy Now</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	
+		   <section>
+			<div class="container mx-auto my-5 p-5 bg-white rounded-2">
+			 <p class="display-6">Full Discription</p>
+				<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+					</div>
+		</section>
+
+		<section>
+			<div class="container mx-auto my-5 p-5 bg-white rounded-2 mb-5">
+				<p class="display-6">Product Reviews</p>
+				
+				<!-- Review 1 -->
+				<div class="mt-4 d-flex align-items-start">
+					<img src="https://via.placeholder.com/50" alt="User Profile" class="rounded-circle me-3" style="width: 50px; height: 50px;"/>
+					<div>
+						<h5 class="fw-bold">Ankit Verma</h5>
+						<div class="text-warning">
+							<span class="star">&#9733;</span>
+							<span class="star">&#9733;</span>
+							<span class="star">&#9733;</span>
+							<span class="star">&#9733;</span>
+							<span class="star">&#9734;</span>
+						</div>
+						<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+						Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+					</div>
+				</div>
+
+				<!-- Review 2 -->
+				<div class="mt-4 d-flex align-items-start">
+					<img src="https://via.placeholder.com/50" alt="User Profile" class="rounded-circle me-3" style="width: 50px; height: 50px;"/>
+					<div>
+						<h5 class="fw-bold">Tina Verma</h5>
+						<div class="text-warning">
+							<span class="star">&#9733;</span>
+							<span class="star">&#9733;</span>
+							<span class="star">&#9734;</span>
+							<span class="star">&#9734;</span>
+							<span class="star">&#9734;</span>
+						</div>
+						<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+						Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+					</div>
+				</div>
+				
+			</div>
+		</section>
+
+ <!--**** Company Section ****-->
+    <section class="text-center bg-light">
+      <div class="container py-5">
+        <h2 class="display-6 mb-3">Our Partners</h2>
+        <div class="row g-3 justify-content-center align-items-center">
+          <div class="col-lg-2 col-md-3 col-6">
+            <img src="img/c1.png" alt="Company 1" class="partner-logo img-fluid rounded">
+          </div>
+          <div class="col-lg-2 col-md-3 col-6">
+            <img src="img/c2.png" alt="Company 2" class="partner-logo img-fluid rounded">
+          </div>
+          <div class="col-lg-2 col-md-3 col-6">
+            <img src="img/c3.png" alt="Company 3" class="partner-logo img-fluid rounded">
+          </div>
+          <div class="col-lg-2 col-md-3 col-6">
+            <img src="img/c4.png" alt="Company 4" class="partner-logo img-fluid rounded">
+          </div>
+        </div>
+      </div>
+    </section>
+
+ <!--**** Footer Section ****-->
+   <section>
+  <!-- Footer -->
+  <footer class="text-center text-lg-start bg-white">
+    <!-- Section: Links -->
+    <section>
+      <div class="container text-center text-md-start">
+        <!-- Grid row -->
+        <div class="row p-5">
+          <!-- Brand Section -->
+          <div class="col-md-12 col-lg-5">
+            <h6 class="text-uppercase fw-bold d-flex align-items-center justify-content-center justify-content-md-start mb-3">
+              <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-shop me-2" viewBox="0 0 16 16">
+                <path d="M2.97 1.35A1 1 0 0 1 3.73 1h8.54a1 1 0 0 1 .76.35l2.609 3.044A1.5 1.5 0 0 1 16 5.37v.255a2.375 2.375 0 0 1-4.25 1.458A2.37 2.37 0 0 1 9.875 8 2.37 2.37 0 0 1 8 7.083 2.37 2.37 0 0 1 6.125 8a2.37 2.37 0 0 1-1.875-.917A2.375 2.375 0 0 1 0 5.625V5.37a1.5 1.5 0 0 1 .361-.976zm1.78 4.275a1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0 1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0 1.375 1.375 0 1 0 2.75 0V5.37a.5.5 0 0 0-.12-.325L12.27 2H3.73L1.12 5.045A.5.5 0 0 0 1 5.37v.255a1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0M1.5 8.5A.5.5 0 0 1 2 9v6h1v-5a1 1 0 0 1 1-1h3a1 1 0 0 1 1 1v5h6V9a.5.5 0 0 1 1 0v6h.5a.5.5 0 0 1 0 1H.5a.5.5 0 0 1 0-1H1V9a.5.5 0 0 1 .5-.5M4 15h3v-5H4zm5-5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1zm3 0h-2v3h2z"></path>
+              </svg>
+              High School Store
+            </h6>
+            <p class="mb-4">Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+			Lorem Ipsum has been the industry's standard dummy text ever since.</p>
+          </div>
+          <!-- Useful Links Section -->
+          <div class="col-md-12 col-lg-7 d-flex align-items-center">
+            <div class="text-center">
+              <p class="fs-4 text-dark mb-3">Stay connected with us and never miss out on exclusive, limited-time discounts!</p>
+              <div class="d-flex justify-content-center">
+                <a class="social mx-2 text-reset" href="#" aria-label="Facebook">
+                  <i class="fa fa-facebook fa-lg"></i>
+                </a>
+                <a class="social mx-2 text-reset" href="#" aria-label="Twitter">
+                  <i class="fa fa-twitter fa-lg"></i>
+                </a>
+                <a class="social mx-2 text-reset" href="#" aria-label="Instagram">
+                  <i class="fa fa-instagram fa-lg"></i>
+                </a>
+                <a class="social mx-2 text-reset" href="#" aria-label="LinkedIn">
+                  <i class="fa fa-linkedin fa-lg"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Grid row -->
+      </div>
+    </section>
+
+    <!-- Copyright -->
+    <div class="text-center p-3 bg-light border-top">
+      <i class="fa fa-copyright me-1"></i>2024 Copyright:
+      <a class="text-decoration-none" href="#">Crafted with love by Niyander</a>
+    </div>
+    <!-- Copyright -->
+  </footer>
+</section>
+ </div>
+ 
+
+<script>
+    const quantityInput = document.getElementById('quantity');
+    const increaseButton = document.getElementById('increaseQuantity');
+    const decreaseButton = document.getElementById('decreaseQuantity');
+
+    increaseButton.addEventListener('click', () => {
+        quantityInput.value = parseInt(quantityInput.value) + 1;
+    });
+
+    decreaseButton.addEventListener('click', () => {
+        if (quantityInput.value > 1) {
+            quantityInput.value = parseInt(quantityInput.value) - 1;
+        }
+    });
+</script>
+	
+	
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  </body>
+</html>

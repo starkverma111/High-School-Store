@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required Meta Tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- SEO Meta Description -->
+    <meta name="description" content="High School Store offers a variety of products tailored for high school students. Browse your shopping cart and proceed to checkout with ease.">
+    
+    <!-- SEO Keywords -->
+    <meta name="keywords" content="High School Store, shopping cart, student products, school supplies, gadgets, apparel, free shipping">
+    
+    <!-- Page Title -->
+    <title>High School Store - Your Shopping Cart</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Product+Sans:wght@300&display=swap" rel="stylesheet">
+    
+    <!-- Animate.css for Animations -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    
+    <!-- Custom Styles -->
+    <style>
+        /* Global Styles */
+        body, html {
+            font-family: 'Product Sans', sans-serif !important;
+            height: 100%;
+            margin: 0;
+            background-color: #ffffff;
+        }
+        
+        /* Quantity Button Styles */
+        .btn-decrease, .btn-increase {
+            width: 30px;
+            height: 30px;
+            font-size: 14px;
+            padding: 0;
+        }
+        
+        /* Remove Button Styles */
+        .btn-remove {
+            color: #dc3545; /* Bootstrap danger color */
+        }
+        
+        /* Table Styles */
+        .table-responsive {
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
+    <!-- Main Container -->
+    <div class="container-fluid p-0 m-0 vh-100">
+        
+        <!--**** Cart Section ****-->
+        <section class="py-3">
+            <div class="container">
+                
+                <!-- Free Shipping Notification -->
+                <div class="my-4 p-3 rounded-2 bg-light d-flex align-items-center">
+                    <i class="fa fa-plane me-3 fs-2" aria-hidden="true"></i>
+                    <div>
+                        <span class="fs-3">Congratulations!</span><br />
+                        <span class="text-muted fs-6">You get free shipping.</span>
+                    </div>
+                </div>
+                
+                <!-- Shopping Cart Heading -->
+                <h2 class="my-5">Your Shopping Cart</h2>
+                
+                <!-- Cart Items Table -->
+                <div class="table-responsive">
+                    <table class="table align-middle">
+                        <thead>
+                            <tr>
+                                <th scope="col">Product</th>
+                                <th scope="col">Price</th>
+                                <th scope="col" style="width: 150px;">Quantity</th>
+                                <th scope="col">Subtotal</th>
+                                <th scope="col">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="cart-items">
+                            <!-- Example Cart Item -->
+                            <tr>
+                                <td>
+                                    <div class="d-flex align-items-center">
+                                        <img src="https://via.placeholder.com/80" alt="Product Image - Product Name" class="me-3" style="width:80px; height:80px; object-fit:cover;">
+                                        <div>
+                                            <h5 class="mb-0">Product Name</h5>
+                                            <small class="text-muted">Category</small>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>$<span class="price">29.99</span></td>
+                                <td>
+                                    <div class="input-group">
+                                        <button class="btn btn-outline-secondary btn-decrease" type="button" aria-label="Decrease quantity">-</button>
+                                        <input type="text" class="form-control form-control-sm text-center quantity" value="1" readonly aria-label="Quantity">
+                                        <button class="btn btn-outline-secondary btn-increase" type="button" aria-label="Increase quantity">+</button>
+                                    </div>
+                                </td>
+                                <td>$<span class="subtotal">29.99</span></td>
+                                <td>
+                                    <button class="btn btn-lg border-0 btn-remove" type="button" aria-label="Remove item">
+                                        <i class="fa fa-close fs-4" aria-hidden="true"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <!-- You can clone and modify the above <tr> for more items -->
+                        </tbody>
+                    </table>
+                </div>
+                
+                <!-- Total and Checkout Button -->
+                <div class="d-flex justify-content-end align-items-center mt-5">
+                    <h4 class="me-3 fs-4">Total: $<span id="total">29.99</span></h4>
+                    <button class="btn btn-primary" type="button">Checkout</button>
+                </div>
+            </div>
+        </section>
+        <!-- End of Cart Section -->
+        
+    </div>
+    
+    <!--**** Footer ****-->
+    <footer class="text-center p-3 bg-light border-top">
+        <i class="fa fa-copyright me-1 mt-3" aria-hidden="true"></i>
+        2024 Copyright:
+        <a class="text-decoration-none" href="#">Crafted with love by Niyander</a>
+    </footer>
+    <!-- End of Footer -->
+    
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" 
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    
+    <!-- JavaScript for Cart Functionality -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const cartItems = document.getElementById('cart-items');
+            const totalElement = document.getElementById('total');
+
+            // Function to update the total price
+            function updateTotal() {
+                let total = 0;
+                const rows = cartItems.querySelectorAll('tr');
+                rows.forEach(row => {
+                    const subtotal = parseFloat(row.querySelector('.subtotal').innerText);
+                    total += subtotal;
+                });
+                totalElement.innerText = total.toFixed(2);
+            }
+
+            // Function to update subtotal for a row
+            function updateSubtotal(row) {
+                const price = parseFloat(row.querySelector('.price').innerText);
+                const quantity = parseInt(row.querySelector('.quantity').value);
+                const subtotal = price * quantity;
+                row.querySelector('.subtotal').innerText = subtotal.toFixed(2);
+            }
+
+            // Event delegation for increase, decrease, and remove buttons
+            cartItems.addEventListener('click', function(e) {
+                if (e.target.closest('.btn-increase')) {
+                    const row = e.target.closest('tr');
+                    const quantityInput = row.querySelector('.quantity');
+                    let quantity = parseInt(quantityInput.value);
+                    quantity++;
+                    quantityInput.value = quantity;
+                    updateSubtotal(row);
+                    updateTotal();
+                }
+
+                if (e.target.closest('.btn-decrease')) {
+                    const row = e.target.closest('tr');
+                    const quantityInput = row.querySelector('.quantity');
+                    let quantity = parseInt(quantityInput.value);
+                    if (quantity > 1) {
+                        quantity--;
+                        quantityInput.value = quantity;
+                        updateSubtotal(row);
+                        updateTotal();
+                    }
+                }
+
+                if (e.target.closest('.btn-remove')) {
+                    const row = e.target.closest('tr');
+                    row.remove();
+                    updateTotal();
+                }
+            });
+
+            // Initial total calculation
+            updateTotal();
+        });
+    </script>
+</body>
+</html>

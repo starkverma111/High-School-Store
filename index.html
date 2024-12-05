@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>High School Store</title>
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+		
+		<!-- Google Font -->
+		<link href="https://fonts.cdnfonts.com/css/google-sans" rel="stylesheet">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+		
+		<!-- Font Awesome CDN | Copy this code and add to head section-->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+		<style>
+			body,html{
+			font-family: 'Product Sans Light', sans-serif !important;
+			height: 100%;
+			margin: 0;
+        	background-color: #fffff;
+        	}
+        	img{
+        	height: 400px;
+        	width:400px;
+        	}
+        	
+			.form-control:focus {
+			border-color: #7e8287bf;
+			box-shadow: inset 0 1px 1px rgb(0 0 0 / 8%), 0 0 8px rgb(132 134 137 / 48%);
+			}
+			
+			
+			
+			.image-container img {
+			aspect-ratio: 1/1;
+            position: absolute;
+            top: 0;
+            left: 0;
+        	max-height:140px;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            
+			} 
+			
+			
+			
+			.partner-logo {
+			width: 100%;         /* Ensures the image takes up full width of its container */
+			max-width: 160px;    /* Sets a max width to ensure uniformity */
+			height: 100px;       /* Fixed height for all images */
+			object-fit: contain; /* Keeps the image aspect ratio and fits it within the defined box */
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div class="container-fluid p-0 m-0">
+			
+			
+			<!--**** nav bar & header Section ****-->
+			<section>
+				<nav class="navbar navbar-expand-lg bg-white bg-gradient shadow-sm p-3">
+					<div class="container">
+						<a class="navbar-brand fw-bold" href="#">
+							<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-shop me-2" viewBox="0 0 16 16">
+								<path d="M2.97 1.35A1 1 0 0 1 3.73 1h8.54a1 1 0 0 1 .76.35l2.609 3.044A1.5 1.5 0 0 1 16 5.37v.255a2.375 2.375 0 0 1-4.25 1.458A2.37 2.37 0 0 1 9.875 8 2.37 2.37 0 0 1 8 7.083 2.37 2.37 0 0 1 6.125 8a2.37 2.37 0 0 1-1.875-.917A2.375 2.375 0 0 1 0 5.625V5.37a1.5 1.5 0 0 1 .361-.976zm1.78 4.275a1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0 1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0 1.375 1.375 0 1 0 2.75 0V5.37a.5.5 0 0 0-.12-.325L12.27 2H3.73L1.12 5.045A.5.5 0 0 0 1 5.37v.255a1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0M1.5 8.5A.5.5 0 0 1 2 9v6h1v-5a1 1 0 0 1 1-1h3a1 1 0 0 1 1 1v5h6V9a.5.5 0 0 1 1 0v6h.5a.5.5 0 0 1 0 1H.5a.5.5 0 0 1 0-1H1V9a.5.5 0 0 1 .5-.5M4 15h3v-5H4zm5-5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1zm3 0h-2v3h2z"></path>
+							</svg>
+						High School Store</a>
+						<button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+							<span class="navbar-toggler-icon"></span>
+						</button>
+						
+						<div class="collapse navbar-collapse" id="navbarSupportedContent">
+							<ul class="navbar-nav ms-auto">
+								<li class="nav-item">
+									<a class="nav-link" href="index.html">Home</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link" href="item.html" target="_blank">Item</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link" href="cart.html" target="_blank">Cart</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link" href="checkout.html" target="_blank">Checkout</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link" href="components.html" target="_blank">Ui Components</a>
+								</li>
+							</ul>
+							<ul class="navbar-nav ms-auto mb-2 mb-lg-0 text-center">
+								<li class="nav-item me-3 py-2">
+									<div class="btn-group">
+										<button type="button" class="btn btn-light border-0 " data-bs-toggle="dropdown" aria-expanded="false">
+											<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart3" viewBox="0 0 16 16">
+												<path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l.84 4.479 9.144-.459L13.89 4zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2"></path>
+											</svg>
+										</button>
+									</div>
+								</li>
+								<li class="nav-item me-3 py-2">	
+									<!-- Example single danger button -->
+									<div class="btn-group">
+										<button type="button" class="btn btn-light border-0 dropdown-toggle fw-bold mx-3" data-bs-toggle="dropdown" aria-expanded="false">
+											<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-gear-fill me-2" viewBox="0 0 16 16">
+												<path d="M9.405 1.05c-.413-1.4-2.397-1.4-2.81 0l-.1.34a1.464 1.464 0 0 1-2.105.872l-.31-.17c-1.283-.698-2.686.705-1.987 1.987l.169.311c.446.82.023 1.841-.872 2.105l-.34.1c-1.4.413-1.4 2.397 0 2.81l.34.1a1.464 1.464 0 0 1 .872 2.105l-.17.31c-.698 1.283.705 2.686 1.987 1.987l.311-.169a1.464 1.464 0 0 1 2.105.872l.1.34c.413 1.4 2.397 1.4 2.81 0l.1-.34a1.464 1.464 0 0 1 2.105-.872l.31.17c1.283.698 2.686-.705 1.987-1.987l-.169-.311a1.464 1.464 0 0 1 .872-2.105l.34-.1c1.4-.413 1.4-2.397 0-2.81l-.34-.1a1.464 1.464 0 0 1-.872-2.105l.17-.31c.698-1.283-.705-2.686-1.987-1.987l-.311.169a1.464 1.464 0 0 1-2.105-.872zM8 10.93a2.929 2.929 0 1 1 0-5.86 2.929 2.929 0 0 1 0 5.858z"></path>
+											</svg>
+											Settings
+										</button>
+										<ul class="dropdown-menu mt-2">
+											<li>
+												<a class="dropdown-item" href="#">
+													<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-circle me-2" viewBox="0 0 16 16">
+														<path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"></path>
+														<path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"></path>
+													</svg>Profile</a>
+											</li>
+											<li>
+												<hr class="dropdown-divider">
+											</li>
+											<li>
+												<a class="dropdown-item" href="#">
+													<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-shop me-2" viewBox="0 0 16 16">
+														<path d="M2.97 1.35A1 1 0 0 1 3.73 1h8.54a1 1 0 0 1 .76.35l2.609 3.044A1.5 1.5 0 0 1 16 5.37v.255a2.375 2.375 0 0 1-4.25 1.458A2.37 2.37 0 0 1 9.875 8 2.37 2.37 0 0 1 8 7.083 2.37 2.37 0 0 1 6.125 8a2.37 2.37 0 0 1-1.875-.917A2.375 2.375 0 0 1 0 5.625V5.37a1.5 1.5 0 0 1 .361-.976zm1.78 4.275a1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0 1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0 1.375 1.375 0 1 0 2.75 0V5.37a.5.5 0 0 0-.12-.325L12.27 2H3.73L1.12 5.045A.5.5 0 0 0 1 5.37v.255a1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0M1.5 8.5A.5.5 0 0 1 2 9v6h1v-5a1 1 0 0 1 1-1h3a1 1 0 0 1 1 1v5h6V9a.5.5 0 0 1 1 0v6h.5a.5.5 0 0 1 0 1H.5a.5.5 0 0 1 0-1H1V9a.5.5 0 0 1 .5-.5M4 15h3v-5H4zm5-5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1zm3 0h-2v3h2z"></path>
+													</svg>Order History</a>
+											</li>
+											<li>
+												<hr class="dropdown-divider">
+											</li>
+											<li>
+												<a class="dropdown-item" href="#">
+													<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-key-fill me-2" viewBox="0 0 16 16">
+														<path d="M3.5 11.5a3.5 3.5 0 1 1 3.163-5H14L15.5 8 14 9.5l-1-1-1 1-1-1-1 1-1-1-1 1H6.663a3.5 3.5 0 0 1-3.163 2M2.5 9a1 1 0 1 0 0-2 1 1 0 0 0 0 2"></path>
+													</svg>
+												Change Password</a>
+											</li>
+											<li>
+												<hr class="dropdown-divider">
+											</li>
+											<li>
+												<a class="dropdown-item fw-bold text-danger" href="#">
+													<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-in-right me-2" viewBox="0 0 16 16">
+														<path fill-rule="evenodd" d="M6 3.5a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 0-1 0v2A1.5 1.5 0 0 0 6.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-8A1.5 1.5 0 0 0 5 3.5v2a.5.5 0 0 0 1 0z"></path>
+														<path fill-rule="evenodd" d="M11.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H1.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708z"></path>
+													</svg>Logout</a>
+											</li>
+										</ul>
+									</li>
+								</div>
+							</ul>
+						</div>
+					</div>
+				</nav>
+			</section>
+			
+			
+			<!--**** Hero Section ****-->
+			<section class="text-center py-5" style="background-image: linear-gradient( 44.8deg,  rgba(255,136,102,0.67) -53.1%, rgba(255,221,136,0.28) 49% );">
+				<div class="container">
+					<div class="row">
+						<div class="col-12 mt-3 mb-3 py-3">
+							<h1 class="fw-bold display-4">Welcome to the High School Store</h1>
+							<p class="lead">Explore our range of products for students and faculty!</p>
+						</div>
+						<div class="col-12 mb-3">
+							<div class="input-group mb-3 w-100 mx-auto" style="max-width: 600px;">
+								<input type="text" class="form-control form-control-lg" placeholder="Search for products..." aria-label="Search for products" aria-describedby="button-addon2">
+								<button class="btn btn-outline-danger" type="button" id="button-addon2">Search</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			
+			<!--**** Shop Layout Section ****-->
+			<section class="bg-light py-5">
+				<div class="container-lg my-5 ">
+					<div class="row g-3">
+						
+						<!-- Categories Section -->
+						<div class="col-md-12 col-lg-3">
+							<div class="bg-white rounded-2 border p-3 mb-4">
+								<h4 class="my-3">Categories</h4>
+								<ul class="list-group text-center">
+									<li class="list-group-item">Men</li>
+									<li class="list-group-item">Women</li>
+									<li class="list-group-item">Smartphones</li>
+									<li class="list-group-item">books</li>
+									<li class="list-group-item">Anime</li>
+								</ul>
+							</div>
+							<div class="bg-white rounded-2 border  p-3">
+								<h4 class="my-3">Exclusive</h4>
+								<ul class="list-group text-center">
+									<li class="list-group-item">60% off</li>
+									<li class="list-group-item">95% off
+									</li>
+								</ul>
+							</div>
+						</div>
+						
+						<!-- Items Section -->
+						<div class="col-md-12 col-lg-9">
+							<div class="bg-white rounded-2 border p-2 px-4">
+								<div class="d-flex bd-highlight align-items-center">
+									<div class="p-2 flex-grow-1 bd-highlight">
+										<h4 class="my-3">Shop Now</h4>
+									</div>
+									
+									<!-- List View Button -->
+									<div class="p-2 bd-highlight">
+										<button type="button" class="btn btn-outline-secondary" id="listViewBtn">
+											
+											<!-- SVG Icon -->
+											<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list-ul" viewBox="0 0 16 16">
+												<path fill-rule="evenodd" d="M5 11.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5m-3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2m0 4a1 1 0 1 0 0-2 1 1 0 0 0 0 2m0 4a1 1 0 1 0 0-2 1 1 0 0 0 0 2"></path>
+											</svg>
+										</button>
+									</div>
+									
+									<!-- Grid View Button -->
+									<div class="p-2 bd-highlight">
+										<button type="button" class="btn btn-outline-secondary" id="gridViewBtn">
+											
+											<!-- SVG Icon -->
+											<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-grid-1x2-fill" viewBox="0 0 16 16">
+												<path d="M0 1a1 1 0 0 1 1-1h5a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1zm9 0a1 1 0 0 1 1-1h5a1 1 0 0 1 1 1v5a1 1 0 0 1-1 1h-5a1 1 0 0 1-1-1zm0 9a1 1 0 0 1 1-1h5a1 1 0 0 1 1 1v5a1 1 0 0 1-1 1h-5a1 1 0 0 1-1-1z"></path>
+											</svg>
+										</button>
+									</div>
+								</div>
+								
+								<!-- this show a gride vue -->
+								<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 animate__animated animate__fadeIn" id="itemsContainer">
+									
+									<!-- Item Card -->
+									<div class="col">
+										<div class="card h-100 rounded-1 border-0 border-bottom border-end shadow-sm">
+											<img src="shop/my2.jpg" class="card-img-top img-fluid rounded-top" style="object-fit: cover; aspect-ratio: 3/2; max-height: 200px;" alt="Item Image">
+											<div class="card-body d-flex flex-column justify-content-between bg-light bg-gradient">
+												<h5 class="card-title">Laptop Skinks</h5>
+												<div class="d-flex justify-content-between align-items-center mt-3">
+													<h5 class="fw-bold mb-0 align-self-center">$150</h5>
+													<button type="button" class="btn btn-danger btn-sm">Add to Cart</button>
+												</div>
+											</div>
+										</div>
+									</div>
+									
+									<!-- Item Card 2 -->
+									<div class="col">
+										<div class="card h-100 rounded-1 border-0 border-bottom border-end shadow-sm">
+											<img src="shop/my3.webp" class="card-img-top img-fluid rounded-top" style="object-fit: contain; aspect-ratio: 3/2; max-height: 200px;" alt="Item Image">
+											<div class="card-body d-flex flex-column justify-content-between bg-light bg-gradient">
+												<h5 class="card-title">I Phone 16 plus</h5>
+												<div class="d-flex justify-content-between align-items-center mt-3">
+													<h5 class="fw-bold mb-0 align-self-center">$800</h5>
+													<button type="button" class="btn btn-danger btn-sm">Add to Cart</button>
+												</div>
+											</div>
+										</div>
+									</div>
+									
+									<!-- Item Card 3 -->
+									<div class="col">
+										<div class="card h-100 rounded-1 border-0 border-bottom border-end shadow-sm">
+											<img src="shop/my4.webp" class="card-img-top img-fluid rounded-top" style="object-fit: cover; aspect-ratio: 3/2; max-height: 200px;" alt="Item Image">
+											<div class="card-body d-flex flex-column justify-content-between bg-light bg-gradient">
+												<h5 class="card-title">Kitchen Utensils - Assorted - Single Piece</h5>
+												<div class="d-flex justify-content-between align-items-center mt-3">
+													<h5 class="fw-bold mb-0 align-self-center">$200</h5>
+													<button type="button" class="btn btn-danger btn-sm">Add to Cart</button>
+												</div>
+											</div>
+										</div>
+									</div>
+									
+									<!-- Item Card 4 -->
+									<div class="col">
+										<div class="card h-100 rounded-1 border-0 border-bottom border-end shadow-sm">
+											<img src="shop/laptop.png" class="card-img-top img-fluid rounded-top" style="object-fit: cover; aspect-ratio: 3/2; max-height: 200px;" alt="Item Image">
+											<div class="card-body d-flex flex-column justify-content-between bg-light bg-gradient">
+												<h5 class="card-title">HP Laptop</h5>
+												<div class="d-flex justify-content-between align-items-center mt-3">
+													<h5 class="fw-bold mb-0 align-self-center">$200</h5>
+													<button type="button" class="btn btn-danger btn-sm">Add to Cart</button>
+												</div>
+											</div>
+										</div>
+									</div>
+									
+									<!-- Item Card 5 -->
+									<div class="col">
+										<div class="card h-100 rounded-1 border-0 border-bottom border-end shadow-sm">
+											<img src="shop/my6.webp" class="card-img-top img-fluid rounded-top" style="object-fit: cover; aspect-ratio: 3/2; max-height: 200px;" alt="Item Image">
+											<div class="card-body d-flex flex-column justify-content-between bg-light bg-gradient">
+												<h5 class="card-title">Cute Chat bot Wallpaper</h5>
+												<div class="d-flex justify-content-between align-items-center mt-3">
+													<h5 class="fw-bold mb-0 align-self-center">$200</h5>
+													<button type="button" class="btn btn-danger btn-sm">Add to Cart</button>
+												</div>
+											</div>
+										</div>
+									</div>
+									
+									<!-- Item Card 6 -->
+									<div class="col">
+										<div class="card h-100 rounded-1 border-0 border-bottom border-end shadow-sm">
+											<img src="shop/cute.jpg" class="card-img-top img-fluid rounded-top" style="object-fit: cover; aspect-ratio: 3/2; max-height: 200px;" alt="Item Image">
+											<div class="card-body d-flex flex-column justify-content-between bg-light bg-gradient">
+												<h5 class="card-title">Anime Girl Wallpaper</h5>
+												<div class="d-flex justify-content-between align-items-center mt-3">
+													<h5 class="fw-bold mb-0 align-self-center">$200</h5>
+													<button type="button" class="btn btn-danger btn-sm">Add to Cart</button>
+												</div>
+											</div>
+										</div>
+									</div>
+									
+									<!-- Repeat Item Card as needed -->
+								</div>
+								
+								<!-- i want there code for list vue  -->
+								<div class="list-view d-none animate__animated animate__fadeIn" id="listViewContainer">
+									<div class="col my-4">
+										<div class="card h-100 border rounded-2 shadow-sm m-auto" style="max-width:850px;">
+											<img src="shop/my1.jfif" class="card-img-top img-fluid rounded-top" style="object-fit: contain; aspect-ratio: 3/2; max-height: 200px;" alt="Item Image">
+											<div class="card-body d-flex flex-column justify-content-between bg-light border-top">
+												<h5 class="card-title">Anime Books Collection</h5>
+												<div class="d-flex justify-content-between align-items-center mt-3">
+													<h4 class="fw-bold mb-0 align-self-center">$299</h4>
+													<button type="button" class="btn btn-danger btn-sm">Add to Cart</button>
+												</div>
+											</div>
+										</div>
+									</div>
+									
+									<div class="col my-4">
+										<div class="card h-100 border rounded-2 shadow-sm m-auto" style="max-width:850px;">
+											<img src="shop/my2.jpg" class="card-img-top img-fluid rounded-top" style="object-fit: contain; aspect-ratio: 3/2; max-height: 200px;" alt="Item Image">
+											<div class="card-body d-flex flex-column justify-content-between bg-light border-top">
+												<h5 class="card-title">Laptop</h5>
+												<div class="d-flex justify-content-between align-items-center mt-3">
+													<h4 class="fw-bold mb-0 align-self-center">$299</h4>
+													<button type="button" class="btn btn-danger btn-sm">Add to Cart</button>
+												</div>
+											</div>
+										</div>
+									</div>
+									
+									
+									
+								</div>
+								
+								<!-- *********  Control Pagination here ************ -->
+								<div class="">
+									
+									<!-- ajax pagination 
+										<div class="d-flex justify-content-center my-5">
+										<button type="button" class="btn btn-primary btn-sm ">Ajax Loading</button>
+									</div> -->
+									
+									<!-- this is pagination -->
+									<div class="d-flex justify-content-center my-5 mt-5">
+										<nav aria-label="Page navigation example">
+											<ul class="pagination">
+												<li class="page-item">
+													<a class="page-link" href="#">Previous</a>
+												</li>
+												<li class="page-item">
+													<a class="page-link" href="#">1</a>
+												</li>
+												<li class="page-item">
+													<a class="page-link" href="#">2</a>
+												</li>
+												<li class="page-item">
+													<a class="page-link" href="#">3</a>
+												</li>
+												<li class="page-item">
+													<a class="page-link" href="#">Next</a>
+												</li>
+											</ul>
+										</nav>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			
+			<!--**** Deals and Offers Section ****-->
+			<section class="bg-white p-5">
+				<div class="container-lg mx-auto my-5 rounded-2">
+					<h2 class="display-6 mb-5 text-center">Super Deals and Offers</h2>
+					<div class="row p-4 shadow-sm" style="background-image: linear-gradient( 174.2deg,  rgba(255,244,228,1) 7.1%, rgba(240,246,238,1) 67.4% );">
+						
+						<!-- Text Section -->
+						<div class="col-md-12 col-lg-6 d-flex flex-column justify-content-center p-5">
+							<h1 id="appo">Exclusive Summer Deals and Offers!</h1>
+							<p class="mt-2">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type                             specimen book.</p>
+						</div>
+						
+						<!-- Image Section -->
+						<div class="col-md-12 col-lg-6 d-flex align-items-center">
+							<img src="img/girl2.png" class="img-fluid rounded" style="width: 100%; object-fit: contain; max-height: 400px;">
+						</div>
+					</div>
+				</div>
+			</section>
+			
+			
+			<!--**** Company Section ****-->
+			<section class="text-center bg-light">
+				<div class="container py-5">
+					<h2 class="display-6 mb-3">Our Partners</h2>
+					<div class="row g-3 justify-content-center align-items-center">
+						<div class="col-lg-2 col-md-3 col-6">
+							<img src="img/c1.png" alt="Company 1" class="partner-logo img-fluid rounded">
+						</div>
+						<div class="col-lg-2 col-md-3 col-6">
+							<img src="img/c2.png" alt="Company 2" class="partner-logo img-fluid rounded">
+						</div>
+						<div class="col-lg-2 col-md-3 col-6">
+							<img src="img/c3.png" alt="Company 3" class="partner-logo img-fluid rounded">
+						</div>
+						<div class="col-lg-2 col-md-3 col-6">
+							<img src="img/c4.png" alt="Company 4" class="partner-logo img-fluid rounded">
+						</div>
+					</div>
+				</div>
+			</section>
+			
+			<!--**** Footer Section ****-->
+			<section>
+				<!-- Footer -->
+				<footer class="text-center text-lg-start bg-white">
+					<!-- Section: Links -->
+					<section>
+						<div class="container text-center text-md-start">
+							<!-- Grid row -->
+							<div class="row p-5">
+								<!-- Brand Section -->
+								<div class="col-md-12 col-lg-5">
+									<h6 class="text-uppercase fw-bold d-flex align-items-center justify-content-center justify-content-md-start mb-3">
+										<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-shop me-2" viewBox="0 0 16 16">
+											<path d="M2.97 1.35A1 1 0 0 1 3.73 1h8.54a1 1 0 0 1 .76.35l2.609 3.044A1.5 1.5 0 0 1 16 5.37v.255a2.375 2.375 0 0 1-4.25 1.458A2.37 2.37 0 0 1 9.875 8 2.37 2.37 0 0 1 8 7.083 2.37 2.37 0 0 1 6.125 8a2.37 2.37 0 0 1-1.875-.917A2.375 2.375 0 0 1 0 5.625V5.37a1.5 1.5 0 0 1 .361-.976zm1.78 4.275a1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0 1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0 1.375 1.375 0 1 0 2.75 0V5.37a.5.5 0 0 0-.12-.325L12.27 2H3.73L1.12 5.045A.5.5 0 0 0 1 5.37v.255a1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0M1.5 8.5A.5.5 0 0 1 2 9v6h1v-5a1 1 0 0 1 1-1h3a1 1 0 0 1 1 1v5h6V9a.5.5 0 0 1 1 0v6h.5a.5.5 0 0 1 0 1H.5a.5.5 0 0 1 0-1H1V9a.5.5 0 0 1 .5-.5M4 15h3v-5H4zm5-5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1zm3 0h-2v3h2z"></path>
+										</svg>
+										High School Store
+									</h6>
+									<p class="mb-4">Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+									Lorem Ipsum has been the industry's standard dummy text ever since.</p>
+								</div>
+								<!-- Useful Links Section -->
+								<div class="col-md-12 col-lg-7 d-flex align-items-center">
+									<div class="text-center">
+										<p class="fs-4 text-dark mb-3">Stay connected with us and never miss out on exclusive, limited-time discounts!</p>
+										<div class="d-flex justify-content-center">
+											<a class="social mx-2 text-reset" href="#" aria-label="Facebook">
+												<i class="fa fa-facebook fa-lg"></i>
+											</a>
+											<a class="social mx-2 text-reset" href="#" aria-label="Twitter">
+												<i class="fa fa-twitter fa-lg"></i>
+											</a>
+											<a class="social mx-2 text-reset" href="#" aria-label="Instagram">
+												<i class="fa fa-instagram fa-lg"></i>
+											</a>
+											<a class="social mx-2 text-reset" href="#" aria-label="LinkedIn">
+												<i class="fa fa-linkedin fa-lg"></i>
+											</a>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- Grid row -->
+						</div>
+					</section>
+					
+					<!-- Copyright -->
+					<div class="text-center p-3 bg-light border-top">
+						<i class="fa fa-copyright me-1"></i>2024 Copyright:
+						<a class="text-decoration-none" href="#">Crafted with love by Niyander</a>
+					</div>
+					<!-- Copyright -->
+				</footer>
+			</section>
+		</div>
+		
+		
+	</script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
